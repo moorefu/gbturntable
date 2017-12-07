@@ -97,7 +97,15 @@ gbTurntable.init({
             id: 'turntable',
             config: function(callback){
                 // 获取奖品信息
-                callback && callback(['1元红包','2元红包','3元红包','4元红包','5元红包','6元红包']);
+                var prizes = [
+                    {'prize':'1','text':'1元红包','img':'images/1.png'},
+                    {'prize':'2','text':'2元红包','img':'images/2.png'},
+                    {'prize':'3','text':'3元红包','img':'images/3.png'},
+                    {'prize':'4','text':'4元红包','img':'images/4.png'},
+                    {'prize':'5','text':'5元红包','img':'images/5.png'},
+                    {'prize':'6','text':'6元红包','img':'images/6.png'},
+                ];
+                callback && callback(prizes);
             },
             getPrize: function(callback) {
                 // 获取中奖信息
@@ -106,7 +114,7 @@ gbTurntable.init({
                 callback && callback([num, chances]);
             },
             gotBack: function(data) {
-                alert('恭喜抽中' + data);
+                alert('恭喜抽中' + data.text);
             }
         });
     }, false);

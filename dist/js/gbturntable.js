@@ -107,7 +107,8 @@
         ctx,  
         prizeItems = document.createElement('ul'), // 奖项容器
         turnNum = 1 / num,  // 文字旋转 turn 值
-        html = [];  // 奖项
+        htmlspan = [],  // 奖项
+        htmlimg = [];  // 奖项
 
     ele = $(id);
     canvas = ele.querySelector('.gb-turntable-canvas');
@@ -153,11 +154,17 @@
       ctx.restore();
 
       // 奖项列表
-      html.push('<li class="gb-turntable-item"> <span style="' + transform + ': rotate(' + i * turnNum + 'turn)">' + opts.prizes[i] + '</span> </li>');
+      var prize = opts.prizes[i];
+      htmlspan.push('<li class="gb-turntable-item"> <span style="' + transform + ': rotate(' + i * turnNum + 'turn)">' + prize.text + '</span></li>');
+      htmlimg.push('<li class="gb-turntable-item"><img src="'+prize.img+'" style="'+transform+': rotate('+ i * turnNum +'turn)">  </li>');
       if ((i+1) === num) {
         prizeItems.className = 'gb-turntalbe-list';
         container.appendChild(prizeItems);
-        prizeItems.innerHTML = html.join('');
+        prizeItems.innerHTML = htmlspan.join('');
+        var prizeImgs = document.createElement('ul');
+        prizeImgs.className = 'gb-turntalbe-list';
+        container.appendChild(prizeImgs);
+        prizeImgs.innerHTML = htmlimg.join('');
       }
 
     }
