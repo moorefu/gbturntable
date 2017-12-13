@@ -59,35 +59,12 @@
         <a class="gb-turntable-btn" href="javascript:;">抽奖</a>
     </section>
 
-
-    <pre>
-gbTurntable.init({
-    id: 'turntable',
-    config: function(callback){
-        // 获取奖品信息
-        callback && callback(['1元红包','2元红包','3元红包','4元红包','5元红包','6元红包']);
-    },
-    getPrize: function(callback) {
-        // 获取中奖信息
-        var num = Math.random() * 6 >>> 0,   //奖品ID
-            chances = num;  // 可抽奖次数
-            callback && callback([num, chances]);
-    },
-    gotBack: function(data) {
-        alert('恭喜抽中' + data);
-    }
-});
-</pre>
-
-
-
-
-
+    <div>
+        <img src="images/15193.JPG">
+    </div>
 </div>
 
-<div class="fork-github">
-    <a href="https://github.com/givebest/GB-canvas-turntable">Fork me on Github</a>
-</div>
+
 
 
 <script src="dist/js/gbturntable.js"></script>

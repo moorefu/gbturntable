@@ -30,6 +30,7 @@ $base: #E44025;
   box-sizing: content-box;
   float: none;
   margin: 0 auto;
+  overflow: hidden;
 }
 .gb-turntable-container{
   position: absolute;
@@ -71,7 +72,7 @@ $base: #E44025;
   position: relative;
   display: block;
   padding-top: 10px;
-  /* width: 50px; */
+  width: 40%;
   margin: 0 auto;
   text-align: center; 
   -webkit-transform-origin: 50% 150px; 
